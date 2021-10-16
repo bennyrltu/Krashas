@@ -46,6 +46,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
 
         mAuth = FirebaseAuth.getInstance();
+
+        Button button1 = findViewById(R.id.buttonDraw);
+        button1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openPaint();
+            }
+        });
+    }
+
+    private void openPaint() {
+        Intent intent = new Intent(this, PaintActivity.class);
+        startActivity(intent);
     }
 
     @Override
